@@ -359,3 +359,23 @@ a:hover,.plain-link:hover,.small-red-link:hover{color:var(--red)}
 .product-card[data-category="garden"] { order: 99; }
 .filter-btn[data-filter="garden"], .garden-filter { order:99; }
 .category-tile[data-jump-category="garden"], .garden-tile { order:99; }
+
+
+/* Stable catalogue geometry: pointer hover must never stretch product images. */
+.product-grid{align-items:start!important}
+.product-card{align-self:start!important;transform:none!important;transition:box-shadow .18s ease!important}
+.product-card:hover{transform:none!important}
+.product-image-wrap{height:clamp(270px,25vw,360px)!important;min-height:0!important;align-self:start!important;margin:10px 10px 0!important}
+.product-image-wrap>img{display:block!important;width:100%!important;height:100%!important;min-height:0!important;max-height:100%!important;object-fit:cover!important;transform:none!important;transition:none!important}
+.product-card:hover .product-image-wrap>img,.product-image-wrap>img:hover{transform:none!important}
+@media(max-width:650px){.product-grid{align-items:start!important}.product-card{align-self:start!important}.product-image-wrap{height:250px!important;min-height:250px!important}.product-image-wrap>img{height:250px!important;min-height:250px!important}}
+
+
+/* Catalogue layout hardening: fixed image viewport prevents tall-row stretching. */
+.product-grid{align-items:start!important}
+.product-card{align-self:start!important;transform:none!important;transition:box-shadow .18s ease!important}
+.product-card:hover{transform:none!important}
+.product-image-wrap{height:clamp(270px,25vw,360px)!important;min-height:0!important;align-self:start!important}
+.product-image-wrap>img{display:block!important;width:100%!important;height:100%!important;min-height:0!important;max-height:100%!important;object-fit:cover!important;transform:none!important;transition:none!important}
+.product-card:hover .product-image-wrap>img,.product-image-wrap>img:hover{transform:none!important}
+@media(max-width:650px){.product-image-wrap{height:250px!important;min-height:250px!important}.product-image-wrap>img{height:250px!important;min-height:250px!important}}
